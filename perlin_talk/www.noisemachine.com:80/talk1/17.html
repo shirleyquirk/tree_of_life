@@ -1,0 +1,63 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app45.us.archive.org';archive_analytics.values.server_ms=1176;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="17"><font size="1">&nbsp;<br></font>
+<a href="16.html"><img src="/web/20001017084040im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="17b.html"><img src="/web/20001017084040im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Computing the pseudo-random gradient:</a>
+<p>
+<ul>
+<li>Precompute table of permutations P[n]
+<p>
+<li>Precompute table of gradients G[n]
+<p>
+<li>G = G[ ( i + P[ (j + P[k]) <sub>mod n</sub> ] ) <sub>mod n</sub> ]
+</ul>
+<td width="500"><td valign="top"><font face="helvetica">
+Computing the gradient must be very fast,
+since we must this a number of times
+per evaluation of the noise function.
+It is also <i>very</i> important
+that there be no visible correlations between
+successive gradient values in any neighborhood.
+Otherwise, telltale correlation patterns will be visible.
+In particular, we need to pick our gradients in such a way
+that there will be no visible correlation
+between the gradient at integer grid point (i,j,k)
+and its neighbors at, say, (i+1,j,k), (i,j+1,k) or (i,j,k+1).
+<p>
+Fortunately, it is ok for the noise
+function to repeat, as long as it
+repeats only after long distance.  After a distance of a few hundred units,
+it doesn't matter if the same pattern appears again.
+The noise function has no large-scale features, so
+by the time an observer is zoomed out far enough
+to see a repeat pattern, the whole noise texture is
+too small to see anyway.
+<p>
+Keeping this in mind,
+the method I came up with in 1983 for noise over R<sup>3</sup> was to
+make a solid tiling block 256<sup>3</sup> in size.
+I did this by precomputing a permutation table P with 256 entries,
+which scrambles up the order of the numbers from 0 through 255.
+I also precomputed a table of gradients G with 256 entries.
+Then I applied the modular arithmetic trick shown on the left.
+By alternating between permuting and index addition,
+I was able to create a pattern of apparently random
+gradients for any input (0,0,0) <s>&lt;</s> (i,j,k) <s>&lt;</s> (255,255,255).
+<p>
+
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
+
+

@@ -1,0 +1,18 @@
+
+The first address on Random number generators:
+
+
+http://random.mat.sbg.ac.at/   Random number generators -- The pLab Project Home Page
+
+
+Timings:
+
+   generator   time
+   -----------------
+   std31ran      4
+   std61ran      5
+   diaconis0    15
+   diaconis2    16.5
+   ncombo       15.5
+   lecuyer      55
+

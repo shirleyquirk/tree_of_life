@@ -1,0 +1,62 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app23.us.archive.org';archive_analytics.values.server_ms=276;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="21"><font size="1">&nbsp;<br></font>
+<a href="20.html"><img src="/web/20000930095316im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="22.html"><img src="/web/20000930095316im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+sum 1/f(noise)</a>
+<p>
+<center>
+<img src="/web/20000930095316im_/http://www.noisemachine.com:80/talk1/imgs/cloudyball.jpg">
+</center>
+<td width="500"><td valign="top"><font face="helvetica">
+The picture on the left looks a lot more interesting
+than the previous picture of a number of reasons.
+The major reason is that it uses a texture that
+consists of a fractal sum of noise calls:
+<p>
+<font color="#a0ffff">
+&nbsp; noise(<b>p</b>) + &#189; noise(2<b>p</b>) + &#188; noise(4<b>p</b>) ...
+</font>
+<p>
+We continue this sum until the size of the next
+term would become too small to see (ie: the noise
+would fluctuate faster than about once every two pixels).
+This results in a logarithmically greater cost
+than simple noise, depending on image resolution.
+<p>
+For example, in the image on the left
+I needed to use 8 evaluations in the sum,
+since any detail smaller than (0.5)<sup>8</sup>
+of the image width
+would just have contributed random noise
+to the texture at this resolution.
+<p>
+In the example on the left,
+a simulation of cloud cover over a watery planet,
+I used this expression
+to modulate between
+the white cloud cover and the dark green-blue planet.
+<p>
+The appearance of a thick transparent atmosphere layer
+is just a trick -
+I lighten the planet color 
+beyond a certain radius in the image.
+Then I apply the cloud texture <i>over</i>
+this, which creates an illusion that this color modulation is in 3D.
+The planet then appears to be transparent, with 
+a smaller sphere floating within.
+
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
+

@@ -1,0 +1,63 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app45.us.archive.org';archive_analytics.values.server_ms=438;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="24a"><font size="1">&nbsp;<br></font>
+<a href="24.html"><img src="/web/20000711023543im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="24b.html"><img src="/web/20000711023543im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Flame:</a> noise scales in x,y, translates in z
+<p>&nbsp;<p>
+<center>
+<img src="/web/20000711023543im_/http://www.noisemachine.com:80/talk1/imgs/flame.gif">
+</center>
+<td width="500"><td valign="top"><font face="helvetica">
+The corona on the left was made as follows:
+<ol>
+<li>Create a smooth gradient function the
+drops off radially from bright yellow to
+dark red.
+<p>
+<li>Phase shift this function
+by adding a turbulence texture to its domain.
+<p>
+<li>Place a black cutout disk over the image.
+</ol>
+<p>
+
+This creates a fine static image, but how do we animate it?
+If you just scale the domain of the noise to make the
+texture flow outward, you get
+a very fake sort of effect, sort of like those old
+lightbulb and rotating aluminum foil fireplaces:
+the texture features move straight outward with
+no random movement.
+<p>
+
+To improve this, we use 3D noise.
+We indeed scale the noise over time, but also,
+as the animation proceeds,
+we translate the domain
+of the noise in its z dimension, out of the image plane.
+This creates a controlled random flicker in the texture,
+which complements the outward flow produced by the scaling,
+and results in remarkably real looking flame animation.
+
+<p>
+
+Click
+<a href="imgs/flame200.html" target="1"><font color="ff80ff">here</font></a>
+for a small (49K) cycling animated gif of the flowing corona.
+Click
+<a href="imgs/flame500.html" target="1"><font color="ff80ff">here</font></a>
+for a large (452K) high quality cycling animated gif of the same.
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+

@@ -1,0 +1,63 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app38.us.archive.org';archive_analytics.values.server_ms=206;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="15"><font size="1">&nbsp;<br></font>
+<a href="14.html"><img src="/web/20000711021129im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="16.html"><img src="/web/20000711021129im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Algorithm</a>
+<p>
+<ol>
+<li>Given an input point
+<p>
+<li>For each of its neighboring grid points:
+<p>
+   <ul>
+   <li>Pick a "pseudo-random" gradient vector
+   <li>Compute linear function (dot product)
+   </ul>
+<p>
+<li><a href="java/noisegrid.html">
+    Take weighted sum, using ease curves</a>
+</ul>
+</ol>
+<td width="500"><td valign="top"><font face="helvetica">
+The outline of my algorithm to create noise is very simple.
+Given an input point P,
+look at each of the surrounding grid points.
+In two dimensions there will be four surrounding grid points;
+in three dimensions there will be eight.
+In n dimensions, a point will have 2<sup>n</sup>
+surrounding grid points.
+<p>
+For each surrounding grid point Q, choose a pseudo-random
+gradient vector G.
+It is very important that for any particular
+grid point you always choose
+the <i>same</i> gradient vector.
+<p>
+Compute the inner product G <sup><b>.</b></sup> (P-Q).
+This will give the value at P of the linear function with gradient G
+which is zero at grid point Q.
+<p>
+Now you have 2<sup>n</sup> of these values.
+Interpolate between them down to your point, using an S-shaped
+cross-fade curve (eg: 3t<sup>2</sup>-2t<sup>3</sup>)
+to weight the interpolant
+in each dimension.
+This step will require computing n S curves,
+followed by 2<sup>n</sup>-1 linear interpolations.
+<p>
+Click on item 3 to the left to follow these steps one by one.
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
+

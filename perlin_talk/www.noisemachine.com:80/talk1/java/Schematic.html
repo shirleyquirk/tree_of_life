@@ -1,0 +1,72 @@
+<html>
+<head><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app43.us.archive.org';archive_analytics.values.server_ms=890;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include -->
+<title>Schematic</title>
+</head>
+<body bgcolor="black" text="white" link="white" vlink="white">
+<table>
+<tr valign="top">
+<td>
+<font face="helvetica" size="5"><i><a href="/web/20001210062700/http://www.noisemachine.com:80/talk1/30.html">back</a></i></font>
+<td>
+<applet code="Schematic.class" name="A" width="600" height="650"></applet>
+<td>
+<font face="helvetica">
+The diagram on the left shows
+the different phases of my hardware implementation of 3D noise.
+Each block of the schematic
+represents an area of the chip.
+<p>
+The architecture is pipelined - at each machine instruction
+a different noise evaluation is being computed in
+each circuit of the chip.
+By clicking on the buttons below,
+you can hilight in turn the successive
+parts of the pipeline:
+<blockquote>
+
+<form>
+<table border="0">
+<tr valign="center">
+<td><input type="button" onclick="document.A.setMode(1);"></td>
+<td><font face="helvetica" color="#ffa0a0"><b>input high order bits i,j,k<sup>&nbsp;</sup></b></font></td>
+<tr valign="center">
+<td><input type="button" onclick="document.A.setMode(2);"></td>
+<td><font face="helvetica" color="#ffa0a0"><b>compute 8 gradients L<br>
+input low order bits u,v,w</b></font></td>
+<tr valign="center">
+<td><input type="button" onclick="document.A.setMode(3);"></td>
+<td><font face="helvetica" color="#ffa0a0"><b>compute 8 grid values H<br>
+compute ease curves S</b></font></td>
+<tr valign="center">
+<td><input type="button" onclick="document.A.setMode(4);"></td>
+<td><font face="helvetica" color="#ffa0a0"><b>interpolate<sub>&nbsp;</sub></b></font></td>
+<tr valign="center">
+<td><input type="button" onclick="document.A.setMode(0);"></td>
+<td><font face="helvetica" color="#a0FFa0"><b>RESET</b></font></td>
+</table>
+
+</form>
+</blockquote>
+
+The tricky part, and the thing that allows me to implement
+3D noise with very few gates,
+is to avoid multiplies in the L blocks and the H blocks.
+Each of the I blocks requires one multiply, for
+a total of seven multiplies.
+<p>
+Yes, there are patents pending on all this. :-)
+
+</blockquote>
+</table>
+</body>
+</html>

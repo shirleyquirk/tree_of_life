@@ -1,0 +1,82 @@
+From: George Marsaglia <geo@stat.fsu.edu>
+Newsgroups: sci.math
+Subject: Re: A RANDOM NUMBER GENERATOR FOR C
+Date: Tue, 30 Sep 1997 05:29:35 -0700
+Organization: Florida State University
+
+I have often been asked to suggest random number generators
+for use in C.  Many good ones are available through the net,
+but they often require  complicated code and various
+ways to use or initialize through calls to subroutines.
+The following suggestion has these properties:
+     Seems to pass all tests of randomness put to it.
+
+     Has much much longer period, >2^60, than most
+     system generators, <2^32,  and versions can be
+     combined to get periods > 2^90, 2^120, etc.
+
+     Exploits the feature of C that provides segments
+     of in-line code through #define statements.  Thus
+     random integers or reals can be put directly into
+     expressions, avoiding the cost of calls to subroutines.
+
+     Uses what I view as the most promising new method
+     for random number generation: multiply-with-carry.
+
+Here is what you do: keep the following six lines of code
+somwhere in your files.
+
+   #define znew  ((z=36969*(z&65535)+(z>>16))<<16)
+   #define wnew  ((w=18000*(w&65535)+(w>>16))&65535)
+   #define IUNI  (znew+wnew)
+   #define UNI   (znew+wnew)*2.328306e-10
+   static unsigned long z=362436069, w=521288629;
+   void setseed(unsigned long i1,unsigned long i2){z=i1; w=i2;}
+
+Whenever you need random integers or random reals in your
+C program, just insert those six lines at (near?) the beginning
+of the program. In every expression where you want a random real
+in [0,1) use UNI, or use IUNI for a random 32-bit integer.
+No need to mess with ranf() or ranf(lastI), etc, with their
+requisite overheads.  Choices for replacing the two multipliers
+36969 and 18000 are given below.  Thus you can tailor your own
+in-line multiply-with-carry random number generator.
+
+This section is expressed as a C comment, in case you want to
+keep it filed with your essential six lines:
+   /* Use of IUNI in an expression will produce a 32-bit unsigned
+    random integer, while UNI will produce a random real in [0,1).
+    The static variables z and w can be reassigned to i1 and i2
+    by setseed(i1,i2);
+   You may replace the two constants 36969 and 18000 by any
+   pair of distinct constants from this list:
+   18000 18030 18273 18513 18879 19074 19098 19164 19215 19584
+   19599 19950 20088 20508 20544 20664 20814 20970 21153 21243
+   21423 21723 21954 22125 22188 22293 22860 22938 22965 22974
+   23109 23124 23163 23208 23508 23520 23553 23658 23865 24114
+   24219 24660 24699 24864 24948 25023 25308 25443 26004 26088
+   26154 26550 26679 26838 27183 27258 27753 27795 27810 27834
+   27960 28320 28380 28689 28710 28794 28854 28959 28980 29013
+   29379 29889 30135 30345 30459 30714 30903 30963 31059 31083
+   (or any other 16-bit constants k for which both k*2^16-1
+   and k*2^15-1 are prime)*/
+
+I don't program in C, so the above comes from looking in manuals,
+(the mathematics, of course, is my own and I am pretty sure of it,
+and pretty sure of the randomness through my Diehard battery,
+available in
+          The Marsaglia Random Number CDROM
+                         with
+          The Diehard Battery of Tests of Randomness
+at    http://www.cs.hku.hk
+or    http://www.stat.fsu.edu
+Theory behind multiply-with-carry is in the file mwc1.ps
+in the postscript directory of the CDROM).
+
+I welcome suggestions if I have misinterpreted C conventions or
+standards.  But interest in random number generators seems great
+enough to risk cluttering up the news group with yet another dumb
+post.
+
+--
+George Marsaglia geo@stat.fsu.edu

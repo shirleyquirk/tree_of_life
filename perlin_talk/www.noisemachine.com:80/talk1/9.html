@@ -1,0 +1,48 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app45.us.archive.org';archive_analytics.values.server_ms=239;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="9"><font size="1">&nbsp;<br></font>
+<a href="8.html"><img src="/web/20001210043900im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="10.html"><img src="/web/20001210043900im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Hypertexture</a>
+<p>
+<center>
+<img src="/web/20001210043900im_/http://www.noisemachine.com:80/talk1/imgs/cloth5.gif">
+</center>
+<td width="500"><td valign="top"><font face="helvetica">
+I tried to make as many different materials as possible.
+On the left is one of a series of experiments in simulating woven fabric.
+To make this, I first defined a flat slab, in which density
+is one when y=0, and then drops off to zero when y wanders off its zero plane.
+More formally: f(x,y,z) = {if |y| &gt; 1 then 0 else 1 - |y|}.
+<p>
+I made the plane ripple up and down by replacing y with y + sin(x)*sin(z)
+before evaluating the slab function.
+Then I cut the slab into fibers by multiplying the slab function
+by cos(x).
+This gave me the warp threads of a woven material.
+Finally, I rotated the whole thing by 90<sup>o</sup>
+to get the weft threads.
+When you add the warp and the weft together,
+you get something like the material on the left.
+<p>
+To make the fiber more coarse (ie: wooley) 
+or conversely more fine,
+I modulated the bias and gain of the resulting function.
+To make the surface undulate,
+I added low frequency noise to y before evaluating anything.
+To give a nice irregular quality
+to the cloth, I added high frequency noise into
+the function.
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+

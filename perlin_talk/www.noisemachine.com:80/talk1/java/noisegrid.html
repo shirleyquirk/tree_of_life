@@ -1,0 +1,59 @@
+<html>
+<head><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app45.us.archive.org';archive_analytics.values.server_ms=120;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include -->
+<title>noisegrid</title>
+</head>
+<body bgcolor="black" text="white" link="white" vlink="white">
+<font face="helvetica" size="5">
+<i><a href="/web/20000711030801/http://www.noisemachine.com:80/talk1/15.html">back</a></i>
+<table><tr><td width="500"><hr>
+<font face="helvetica" size="5">
+Constructing 2D noise
+<p>
+<applet code="noisegrid.class" width="500" height="500">
+</applet>
+<td valign="top"><font face="helvetica"><blockquote>
+
+The diagram on the left goes step by step
+through the construction of 2D noise.
+The point being evaluated is shown in red.
+<p>
+Try clicking on the diagram.
+First you will see a linear gradient
+rising from one of the four surrounding grid points.
+This is the pseudo-random gradient the algorithm
+has chosen at that point.
+<p>
+Click again, and you will see the drop-off filter centered
+at that grid point.
+This filter, which makes the influence of this grid point
+gradually drop to zero at a unit distance,
+is a product of two
+cubic drop-off curves, one in x and the other in y.
+The shape of each cubic is computed by 3t<sup>2</sup>-2t<sup>3</sup>.
+<p>
+Click again, and
+you will see the the linear gradient multiplied by
+the weighting filter.  This will be the contribution from
+that grid point to the final result.
+
+<p>
+Click three more times.
+You will see, in turn, the contributions from each of the other three surrounding grid points.
+<p>
+
+Finally, click one more time, and you will see the final result -
+the sum of the contributions from the four surrounding grid points.
+
+</table>
+</body>
+</html>

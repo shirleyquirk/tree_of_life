@@ -1,0 +1,48 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app19.us.archive.org';archive_analytics.values.server_ms=617;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="32"><font size="1">&nbsp;<br></font>
+<a href="31.html"><img src="/web/20010110222600im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="33.html"><img src="/web/20010110222600im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Coming next: simplex noise</a>
+<p>
+<ul>
+<li>Over R<sup>n</sup>, where n = 4, 5, 6, ...
+<li>Original noise is O(2<sup>n</sup>) in dimension
+<li>Simplex noise is O(n<sup>2</sup>)
+<li>Eg: animated lightfield (BRDF) texture: 5D
+</ul>
+<td width="500"><td valign="top"><font face="helvetica">
+I'm also developing a different approach to noise,
+in which the cubic lattice is replaced by a simplicial lattice.
+This becomes a big win in higher dimensions, starting at
+noise over R<sup>4</sup>, and then just keeps getting better.
+If you evaluate a point based on the influence of vertices of a surrounding
+simplex, then you only need to do n+1 operations, one per vertex.
+In contrast, the grid method gets twice as slow with each
+added dimension, which becomes untenable beyond four dimensions.
+<p>
+Since at each vertex of the simplex you need to do a dot product
+between items of length n, the total cost of the simplex algorithm
+is O(n<sup>2</sup>) with respect to dimension.
+In contrast, the traditional noise implementation
+is at least O(2<sup>n</sup>).
+<p>
+This allows you to do things like procedurally textured BRDFs, which
+are four dimensional, and become five dimensional when you
+vary them through time.
+My current plan is to explain the simplex approach
+in detail in a paper to be submitted for SIGGRAPH 2001.
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
+

@@ -1,0 +1,62 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app41.us.archive.org';archive_analytics.values.server_ms=223;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="17b"><font size="1">&nbsp;<br></font>
+<a href="17.html"><img src="/web/20001017094743im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="18.html"><img src="/web/20001017094743im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Computing the pseudo-random gradient:</a>
+<p>
+<ul>
+<li>Precompute table of permutations P[n]
+<p>
+<li>Precompute table of gradients G[n]
+<p>
+<li>G = G[ &nbsp; i + P[ &nbsp; j + P[ &nbsp; k &nbsp; ] &nbsp; ] &nbsp; ]
+</ul>
+<td width="500"><td valign="top"><font face="helvetica">
+Actually, you don't really need to call a mod function;
+since 256 is a power of two, I just did the addition
+and masked off all but the lowest 8 bits,
+so the actual computational cost is really more
+like what you now see on the left.
+<p>
+To precompute the table of gradients G,
+I did a Monte Carlo simulation, as follows:
+<p>
+
+The problem was to compute 256 gradient vectors
+uniformly around the surface of a sphere.
+I knew that I could compute points
+uniformly within a cubic volume, by picking uniformly
+random values of x,y, and z via a <font face="courier">rand()</font> function.
+<p>
+In order
+to make a uniformly random distribution of points
+on the surface of a sphere, you really just need to make a uniformly random
+distribution of points within a spherical <i>volume</i>.
+Then you can normalize them (ie: resize them all to
+unit length).
+
+<p>
+So my Monte Carlo simulation worked as follows:
+I generated uniformally random points within the cube which surrounds the unit sphere.
+I threw out all the points that lie outside the unit sphere
+and kept all the points that lie inside the unit sphere.
+These are
+the points for which x<sup>2</sup>+y<sup>2</sup>+z<sup>2</sup> &lt; 1.
+<p>
+I stopped this process only when I had filled up a table of 256 entries.
+I then normalized all the entries in the table, and I was done.
+
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+

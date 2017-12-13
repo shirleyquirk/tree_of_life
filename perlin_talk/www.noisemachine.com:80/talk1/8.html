@@ -1,0 +1,57 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app16.us.archive.org';archive_analytics.values.server_ms=687;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="8"><font size="1">&nbsp;<br></font>
+<a href="7.html"><img src="/web/20000711062053im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="9.html"><img src="/web/20000711062053im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+1989: Hypertexture</a>
+<p>
+<center>
+<img src="/web/20000711062053im_/http://www.noisemachine.com:80/talk1/imgs/arch2.gif">
+</center>
+<td width="500"><td valign="top"><font face="helvetica">
+Meanwhile, I joined the faculty at NYU and did all sorts of research.
+One of the questions I was asking in 1988 and 1989 was
+whether you could use procedural textures to unify
+rendering and shape modeling.
+I started to define volume-filling procedural textures
+and render them by marching rays through the volumes,
+accumulating density along the way and
+using the density gradient to do lighting.
+<p>
+I worked with a student of mine, Eric Hoffert,
+to produce a SIGGRAPH paper in 1989.
+The technique is called hypertexture,
+officially because it is texture in a higher dimension,
+but actually because the word sounds like "hypertexture"
+and for some reason I thought this was funny.
+I offer no redeeming excuse.
+<p>
+The image on the left is of a procedurally generated
+rock archway.
+Like all hypertextures, it's really a density cloud
+that's been "sharpened" to look like a solid object.
+I defined this hypertexture first by defining
+a space-filling function that has a smooth isosurface
+contour in the shape of an archway.
+Then I added to this function a fractal sum of noise functions:
+at each iteration of the sum I doubled the frequency
+and halved the amplitude.
+Finally, I applied a high gain to the density function,
+so that the transition from zero to one would be rapid
+(about two ray samples thick).
+When you march rays through this function,
+you get the image on the left.
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
+

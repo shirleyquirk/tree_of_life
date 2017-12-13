@@ -1,0 +1,87 @@
+<html>
+<script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app39.us.archive.org';archive_analytics.values.server_ms=302;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" alink="white" vlink="white">
+<center>
+<h2>Ken Perlin's pure Java 1.0 interactive 3D renderer gallery</h2>
+</center>
+
+<p align="justify">
+A lot of people are trying to convince you that
+you can't do
+real-time 3D rendering on the web wser without
+using some company's proprietary plug-in.
+I knew that was bogus, so
+as a home project I wrote
+a 3D renderer that will run in any web browser
+supporting Java 1.0.
+Below are some examples.
+<i>- Ken</i>
+<ul>
+<li>
+<a href="Fiend.html" target="1"><b>Animated character:
+   <i>My Best Fiend, the Politician</i></b></a>
+<a href="Fiend.java" target="1"><i>(source code is here)</i></a>
+
+<li>
+<a href="Test1.html" target="1">
+   <b>Example of multiple layers of transparency</b></a>
+<a href="Test1.java" target="1"><i>(source code is here)</i></a>
+
+<li>
+<a href="Test2.html" target="1"><b><i>Artifact from a Happier World</i></b></a>
+<a href="Test2.java" target="1"><i>(source code is here)</i></a>
+
+<li>
+<a href="Test3.html" target="1"><b>Sculpture:
+   <i>Linking Arms</i> (over 100K triangles)</b></a>
+<a href="Test3.java" target="1"><i>(source code is here)</i></a>
+</ul>
+<p align="justify">
+
+Feel free to use this software for academic or research
+(ie: non-commercial) projects.
+The base source code is in the following files:
+<blockquote>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><a href="RenderApplet.java" target="1">RenderApplet.java</a>
+<td>&nbsp; &nbsp; &nbsp; &nbsp; 
+<td>The applet that the above examples all extend.
+
+<tr><td><a href="Renderer.java" target="1">Renderer.java</a>
+<td>
+<td>This is what actually does the work of rendering.
+
+<tr><td><a href="Shape.java" target="1">Shape.java</a>
+<td>
+<td>Toolkit to represent and build various shapes.
+
+<tr><td><a href="Noise.java" target="1">Noise.java</a>
+<td>
+<td>My noise function (eg: used in the Sculpture example).
+
+<tr><td><a href="Matrix.java" target="1">Matrix.java</a>
+<td>
+<td>Support for 4x4 matrix transforms.
+
+<tr><td><a href="Vec.java" target="1">Vec.java</a>
+<td>
+<td>Support for 3D vector operations.
+
+</table>
+</blockquote>
+
+<p align="justify">
+I'm going to continue to improve the renderer,
+and to add cool new examples and capabilities, so watch this space.
+
+</body>
+</html>

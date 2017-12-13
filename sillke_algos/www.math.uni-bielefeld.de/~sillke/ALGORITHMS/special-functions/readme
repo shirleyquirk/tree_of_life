@@ -1,0 +1,61 @@
+README  special functions
+
+    erf.c       : the error function
+    ibeta.c     : the incomplete beta function
+    igamma.c    : the incomplete gamma function
+    inv_erf.c   : the inverse of the error function
+    s_erf.c     : the error function (from glib.c)
+
+
+SIAM Activity Group on Orthogonal Polynomials and Special Functions
+ at: http://www.math.yorku.ca/Who/Faculty/Muldoon/siamopsf/
+
+http://www.letlib.org/
+Look in NETLIB under random for dcdflib.c.  This has CDF's and inverse CDF's
+for many functions.  The file is called a tar, but it is really a gz.  So
+you must rename it before you can open it.  Well documented and complies
+easily under gcc or VC.
+Example Netlib Search at URL http://www.netlib.org/utk/misc/netlib_query.html
+and in the search box enter "complementary incomplete gamma" 
+(including the quotation marks).
+
+http://lib.stat.cmu.edu/
+Just get AS 66 for the normal distribution function, and AS 241 for its
+inverse.  The Applied Statistics algorithms were published by the
+Royal Statistical Society.  They can be downloaded from statlib
+(http://lib.stat.cmu.edu).  They are both in Fortran, though some of the
+RSS algorithms were in Algol and Pascal, and one was in C.
+
+Erf:
+http://www.netlib.org/specfun/erf.
+
+Phi, InvPhi:
+Alan Miller, Retired Scientist (Statistician)
+CSIRO Mathematical & Information Sciences
+Alan.Miller -at- vic.cmis.csiro.au
+http://www.ozemail.com.au/~milleraj
+
+InvPhi:
+http://www.math.uio.no/~jacklam/notes/invnorm/
+
+Gamma:
+Stephen L. Moshier wins the prize.  He has the gamma function written at
+hardware precisions from float to double to 80 bit long double and 128 bit
+long double as well as an extended precision version called qfloat.  It's at
+Netlib, in the Cephes collection.  Have fun.
+
+* Factorial(z) = Gamma(z+1)
+*
+*         - y(z) - z - 1               z + 1              2            7
+*       %e               (y(z) + z + 1)      sqrt(%pi (2 y (z) + 2 z + -))
+*                                                                      3
+*  z! ~ ------------------------------------------------------------------,
+*                                     z + 1
+*
+*         0.5396181799525381 z + 1.0327346262650376
+* y(z) := -----------------------------------------
+*                   z + 1.7997957966258356
+*
+* The relative is extremal at z =  .0, .22033623, 1.181958, and 5.769305.
+* It is +- 1.35e-7.
+*

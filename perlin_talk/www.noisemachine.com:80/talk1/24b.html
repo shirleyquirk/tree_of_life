@@ -1,0 +1,59 @@
+<html><script type="text/javascript" src="/static/js/analytics.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">archive_analytics.values.service='wb';archive_analytics.values.server_name='wwwb-app43.us.archive.org';archive_analytics.values.server_ms=284;</script><script type="text/javascript" src="/static/js/wbhack.js?v=1512696645.0" charset="utf-8"></script>
+
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/static/css/banner-styles.css?v=1512696645.0" />
+<link rel="stylesheet" type="text/css" href="/static/css/iconochive.css?v=1512696645.0" />
+
+<!-- End Wayback Rewrite JS Include --><body bgcolor="black" text="white" link="white" vlink="white"><font face="helvetica" size="5"><a name="24b"><font size="1">&nbsp;<br></font>
+<a href="24a.html"><img src="/web/20000831002834im_/http://www.noisemachine.com:80/talk1/imgs/left.gif" border="0"></a>&nbsp;<a href="24c.html"><img src="/web/20000831002834im_/http://www.noisemachine.com:80/talk1/imgs/right.gif" border="0"></a>
+<table><tr><td width="500" valign="top"><font face="helvetica" size="5"><hr width="500">
+Clouds:</a> noise translates in x and z
+<p>
+<center>
+<img src="/web/20000831002834im_/http://www.noisemachine.com:80/talk1/imgs/cloud.gif">
+</center>
+<td width="500"><td valign="top"><font face="helvetica">
+Here we apply the same technique to animating clouds.
+In this case we use the turbulence texture to phase shift the
+domain of the flow in y (vertically) rather than radially:
+<p>
+<font color="#a0ffff">
+&nbsp; colorMap(y + F(x,y,z))
+</font>
+<p>
+
+If you click below to see the animations,
+you'll see that the animated clouds
+(as well as the animated flame you saw before)
+form a cycle.
+This was done by replacing the perturbation function F(x,y,z)
+with:
+<p>
+<font color="#a0ffff">
+&nbsp; F<sub>2</sub>(x,y,z) = (1-z)*F(x,y,z) + z*F(x,y,z-1)
+</font>
+<p>
+Notice that F<sub>2</sub>(x,y,0) = F<sub>2</sub>(x,y,1).
+Now we can compute the cloud animation from z=0 to z=1:
+<p>
+<font color="#a0ffff">
+&nbsp; colorMap(y + F<sub>2</sub>(x,y,z))
+</font>
+<p>
+
+Click
+<a href="imgs/clouds200.html" target="1"><font color="ff80ff">here</font></a>
+for a small (113K) cycling animated gif of roiling clouds.
+Click
+<a href="imgs/clouds500.html" target="1"><font color="ff80ff">here</font></a>
+for a large (984K) high quality cycling animated gif of the same.
+</table>
+</table>
+
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;
+<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p>&nbsp;<p></body></html>
+
