@@ -36,7 +36,7 @@ def g(p,here,**kwargs):
     
     p.c0=here[0] # starting curvature 
     p.c1=here[1] # ending curvature 
-    p.path_to(end,segs)
+    p.path_to(end,segs) # modifies t1
     p.pathpoints(segs)
     return (np.sqrt(thetadiff(t1.t,p.t1.t)**2+thetadiff(t0.t,p.t0.t)**2),thetadiff(t1.t,p.t1.t),thetadiff(t0.t,p.t0.t))
 
