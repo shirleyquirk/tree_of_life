@@ -52,6 +52,11 @@ def colerp(a,b,p):
     return (r[0]<<16)+(r[1]<<8)+r[2]
 
 def cheaptaperedpath(start,theta0,theta1,end,startwidth,endwidth):
+    """ given a start ray(x,y,theta) and an end ray,
+        as well as start/end widths, construct an svg string which:
+        is a filled path outlining the equivalent of a cubic spline between those two poiints
+        but with a steadily tapering strokewidth
+        """
     #encol=0x87b2ed
     #startcol=0x2c8f82
     #startcol=0x458a94
