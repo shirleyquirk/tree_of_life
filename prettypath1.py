@@ -36,8 +36,9 @@ def g(p,here,**kwargs):
     
     p.c0=here[0] # starting curvature 
     p.c1=here[1] # ending curvature 
-    p.path_to(end,segs) # modifies t1
-    p.pathpoints(segs)
+    p.path_to(end,segs) # overwrites t0, + effectsOf pathpoints, then sets t0 such that we end exactly at our goal
+    p.pathpoints(segs) # calculate our path again. our initial and final angles may not be quite right
+    # return the rms error and the individual error components 
     return (np.sqrt(thetadiff(t1.t,p.t1.t)**2+thetadiff(t0.t,p.t0.t)**2),thetadiff(t1.t,p.t1.t),thetadiff(t0.t,p.t0.t))
 
 def optimize2(**kwargs):
