@@ -11,6 +11,9 @@ def radians(degrees):
 
 
 def thetadiff(t1,t2):
+    """ takes two angles in radians
+    returns the difference, in degrees
+    """
     #d=degrees(t1%(2*np.pi)-t2%(2*np.pi))
     d=degrees(abs(t1-t2))
     #if d>180:
