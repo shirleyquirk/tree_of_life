@@ -21,13 +21,21 @@ def thetadiff(t1,t2):
     return d
     
 def g(p,here,**kwargs):
-    t1=kwargs.pop('t1')
-    t0=kwargs.pop('t0')
-    end=kwargs.pop('end')
-    segs=kwargs.pop('segs')
+    """ a fitness function for a p:PrettyPath
+       here: a 2tuple of Curvatures
+       representing the domain 
+       t1= 
+       t0= 
+       end: goal
+       segs: number of segments we will split the curve into when we approximate it
+    """
+    t1=kwargs.pop('t1') # Vec2D
+    t0=kwargs.pop('t0') # Vec2D
+    end=kwargs.pop('end') # Vec2D
+    segs=kwargs.pop('segs') # int
     
-    p.c0=here[0]
-    p.c1=here[1]
+    p.c0=here[0] # starting curvature 
+    p.c1=here[1] # ending curvature 
     p.path_to(end,segs)
     p.pathpoints(segs)
     return (np.sqrt(thetadiff(t1.t,p.t1.t)**2+thetadiff(t0.t,p.t0.t)**2),thetadiff(t1.t,p.t1.t),thetadiff(t0.t,p.t0.t))
